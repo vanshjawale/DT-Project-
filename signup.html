@@ -18,7 +18,7 @@
 
     .left-side {
       flex: 1;
-      background-image: url('images\signupbg.jpg');
+      background-image: url('images/signupbg.jpg');
       background-size: cover;
       background-position: center;
       position: relative;
@@ -122,20 +122,20 @@
       <h2>Anti-Bullying and Victim Support System</h2>
       <form onsubmit="goToDetails(event)">
         <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" required>
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" required>
         </div>
         <div class="form-group">
-          <label>Email</label>
-          <input type="email" required>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
         </div>
         <div class="form-group">
-          <label>Password</label>
-          <input type="password" required>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
         </div>
         <div class="form-group">
-          <label>Confirm Password</label>
-          <input type="password" required>
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required>
         </div>
         <button type="submit">Create Account</button>
         <div class="link">
@@ -148,7 +148,17 @@
   <script>
     function goToDetails(e) {
       e.preventDefault();
-      // Redirect to user detail form
+
+      // Optionally you can check if password and confirmPassword match here
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+      }
+
+      // Redirect to user detail form page
       window.location.href = "user_detail.html";
     }
   </script>
