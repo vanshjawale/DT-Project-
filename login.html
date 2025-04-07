@@ -18,7 +18,7 @@
 
     .left-side {
       flex: 1;
-      background-image: url('images\loginbg.jpg');
+      background-image: url('images/loginbg.jpg');
       background-size: cover;
       background-position: center;
       position: relative;
@@ -111,7 +111,7 @@
   <div class="left-side">
     <div class="overlay">
       <div>
-        <h1>Hey there ..Welcome Back</h1>
+        <h1>Hey there.. Welcome Back</h1>
         <p>Log in to continue getting support. Every voice matters.</p>
       </div>
     </div>
@@ -120,7 +120,7 @@
   <div class="right-side">
     <div class="login-form">
       <h2>Anti-Bullying and Victim Support System</h2>
-      <form>
+      <form onsubmit="redirectToHomepage(event)">
         <div class="form-group">
           <label>Email</label>
           <input type="email" required>
@@ -136,5 +136,13 @@
       </form>
     </div>
   </div>
+
+  <script>
+    function redirectToHomepage(e) {
+      e.preventDefault();
+      // Add your login logic here if needed (e.g., validation)
+      window.location.href = "homepage.html";
+    }
+  </script>
 </body>
 </html>
